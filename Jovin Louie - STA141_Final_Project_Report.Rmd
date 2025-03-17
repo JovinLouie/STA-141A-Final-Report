@@ -1,6 +1,6 @@
 ---
 title: "STA 141A Final Project Report | Modeling Feedback Outcomes in Mice Stimulus Experiments"
-author: "Jovin Louie"
+author: "Jovin Louie | 920796821"
 date: "2025-03-17"
 output: html_document
 ---
@@ -84,14 +84,15 @@ summary(session[[1]])
 ```
 
 These 8 variables and their meanings are:
- - `contrast_left` is the contrast of the left stimulus
- - `contrast_right` is the contrast of the right stimulus
- - `feedback_type` is the feedback for the mice where 1 is positive feedback and -1 for negative feedback
- - `mouse_name` is the mouse name (Cori, Forssmann, Hench, or Lederberg)
- - `brain_area` is the brain area that is activated
- - `date_exp` represents the date the experiments took place.
- - `spks` represents the number of spikes in the visual cortex over time
- - `time` represents the centers of the time bins
+
+- `contrast_left` is the contrast of the left stimulus
+- `contrast_right` is the contrast of the right stimulus
+- `feedback_type` is the feedback for the mice where 1 is positive feedback and -1 for negative feedback
+- `mouse_name` is the mouse name (Cori, Forssmann, Hench, or Lederberg)
+- `brain_area` is the brain area that is activated
+- `date_exp` represents the date the experiments took place.
+- `spks` represents the number of spikes in the visual cortex over time
+- `time` represents the centers of the time bins
 
 ## Mean Activated Brain Regions Per Mouse
 ```{r}
@@ -996,6 +997,7 @@ XGBoost on top of having the highest accuracy, it also maintained a high specifi
 Among the four models evaluated (Logistic Regression, KNN, SVM, and XGBoost), XGBoost stands out as the best-performing model. While KNN, SVM, and Logistic Regression all demonstrated high specificity, they struggled with classifying negative feedback (`0`), showing an overwhelming bias toward predicting positive feedback (`1`). 
 
 Although XGBoost still exhibits this bias, it had the best overall balance across key metrics:
+
 - Highest accuracy (72.47%)
 - Highest sensitivity (14.48%), meaning it detected more negative cases than the other models.
 - Highest balanced accuracy (55.43%), which accounts for both sensitivity and specificity.
